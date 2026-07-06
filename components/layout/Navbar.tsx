@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import ThemeToggle from './ThemeToggle'
 
 const navLinks = [
   { label: 'Nosotros', href: '#nosotros' },
@@ -76,6 +77,7 @@ export default function Navbar() {
           >
             Calificar
           </button>
+          <ThemeToggle />
         </nav>
 
         {/* Mobile hamburger */}
@@ -120,6 +122,9 @@ export default function Navbar() {
           >
             Calificar el proyecto
           </button>
+          <div className="flex justify-end pt-2">
+            <ThemeToggle />
+          </div>
         </nav>
       </div>
     </header>

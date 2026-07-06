@@ -84,6 +84,36 @@
   --sidebar-ring: #2F9E72;
 }
 
+.dark {
+  color-scheme: dark;
+  --background: #0F1A14;
+  --foreground: #ECEFEE;
+  --card: #162420;
+  --card-foreground: #ECEFEE;
+  --popover: #162420;
+  --popover-foreground: #ECEFEE;
+  --primary: #4FCB9B;
+  --primary-foreground: #0F1A14;
+  --secondary: #FFA552;
+  --secondary-foreground: #1A1208;
+  --muted: #1E2F26;
+  --muted-foreground: #A7B2AD;
+  --accent: #FFC56B;
+  --accent-foreground: #1A1208;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: #243832;
+  --input: #243832;
+  --ring: #4FCB9B;
+  --sidebar: #162420;
+  --sidebar-foreground: #ECEFEE;
+  --sidebar-primary: #4FCB9B;
+  --sidebar-primary-foreground: #0F1A14;
+  --sidebar-accent: #1E2F26;
+  --sidebar-accent-foreground: #ECEFEE;
+  --sidebar-border: #243832;
+  --sidebar-ring: #4FCB9B;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -146,4 +176,51 @@
 @keyframes shimmer {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
+}
+
+/* =========================================================
+   Dark mode overrides for hard-coded colors
+   (so existing components like Navbar adapt without edits)
+   ========================================================= */
+.dark {
+  --hc-bg-cream: #0F1A14;
+  --hc-bg-white: #162420;
+  --hc-bg-mint: #1E2F26;
+  --hc-bg-beige: #1E2F26;
+  --hc-text-dark: #ECEFEE;
+  --hc-text-muted: #A7B2AD;
+  --hc-border: #243832;
+  --hc-text-green-dark: #4FCB9B;
+  --hc-bg-green: #1E2F26;
+}
+
+.dark .bg-white {
+  background-color: var(--hc-bg-white);
+}
+.dark .bg-\[\#FFF9F2\] {
+  background-color: var(--hc-bg-cream);
+}
+.dark .bg-\[\#DDF3E8\] {
+  background-color: var(--hc-bg-green);
+}
+.dark .bg-\[\#F1E6D8\] {
+  background-color: var(--hc-bg-beige);
+}
+.dark .text-\[\#263238\] {
+  color: var(--hc-text-dark);
+}
+.dark .text-\[\#667085\] {
+  color: var(--hc-text-muted);
+}
+.dark .text-\[\#1F6B4F\] {
+  color: var(--hc-text-green-dark);
+}
+.dark .border-\[\#F1E6D8\] {
+  border-color: var(--hc-border);
+}
+.dark .hover\:bg-\[\#DDF3E8\]:hover {
+  background-color: var(--hc-bg-green);
+}
+.dark .hover\:text-\[\#2F9E72\]:hover {
+  color: #4FCB9B;
 }

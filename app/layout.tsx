@@ -34,7 +34,16 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es" className={`${plusJakarta.variable} ${sora.variable} bg-background`}>
+    <html lang="es" className={`${plusJakarta.variable} ${sora.variable} bg-background`} suppressHydrationWarning>
+      <head>
+        <script
+          // Pre-paint script: applies the saved theme before React hydrates,
+          // so the page never flashes white when the user prefers dark.
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.classList.toggle('dark', t==='dark' || (!t && d));}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body className="antialiased font-sans">{children}</body>
     </html>
   )

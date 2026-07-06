@@ -28,7 +28,7 @@ export default function ThemeToggle() {
     return (
       <button
         aria-label="Cambiar tema"
-        className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:bg-[#DDF3E8] dark:hover:bg-[#1E2F26]"
+        className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:bg-[#DDF3E8] dark:hover:bg-[#1E2F26] text-[#263238] dark:text-[#ECEFEE]"
       >
         <span className="block w-5 h-5 rounded-full" />
       </button>
@@ -42,7 +42,9 @@ export default function ThemeToggle() {
       onClick={toggle}
       aria-label={isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
       title={isDark ? 'Modo claro' : 'Modo oscuro'}
-      className="relative w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:bg-[#DDF3E8] dark:hover:bg-[#1E2F26] active:scale-95"
+      className={`relative w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:bg-[#DDF3E8] dark:hover:bg-[#1E2F26] active:scale-95 ${
+        isDark ? 'text-[#ECEFEE]' : 'text-[#263238]'
+      }`}
     >
       {/* Sun (visible in light mode) */}
       <svg

@@ -80,23 +80,26 @@ export default function Navbar() {
           <ThemeToggle />
         </nav>
 
-        {/* Mobile hamburger */}
-        <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
-          onClick={() => setMenuOpen((v) => !v)}
-          aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
-          aria-expanded={menuOpen}
-        >
-          <span
-            className={`block w-5 h-0.5 bg-[#263238] transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}
-          />
-          <span
-            className={`block w-5 h-0.5 bg-[#263238] transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}
-          />
-          <span
-            className={`block w-5 h-0.5 bg-[#263238] transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}
-          />
-        </button>
+        {/* Mobile: theme toggle + hamburger */}
+        <div className="md:hidden flex items-center gap-1">
+          <ThemeToggle />
+          <button
+            className="flex flex-col gap-1.5 p-2"
+            onClick={() => setMenuOpen((v) => !v)}
+            aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={menuOpen}
+          >
+            <span
+              className={`block w-5 h-0.5 bg-[#263238] dark:bg-[#ECEFEE] transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}
+            />
+            <span
+              className={`block w-5 h-0.5 bg-[#263238] dark:bg-[#ECEFEE] transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}
+            />
+            <span
+              className={`block w-5 h-0.5 bg-[#263238] dark:bg-[#ECEFEE] transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}
+            />
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -122,9 +125,6 @@ export default function Navbar() {
           >
             Calificar el proyecto
           </button>
-          <div className="flex justify-end pt-2">
-            <ThemeToggle />
-          </div>
         </nav>
       </div>
     </header>

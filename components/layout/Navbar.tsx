@@ -32,7 +32,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-[#F1E6D8]'
+          ? 'bg-[#FFF9F2]/95 dark:bg-[#0F1A14]/95 backdrop-blur-md shadow-sm border-b border-[#F1E6D8] dark:border-[#243832]'
           : 'bg-transparent'
       }`}
     >
@@ -101,7 +101,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 bg-white border-t border-[#F1E6D8] ${
+        className={`md:hidden overflow-hidden transition-all duration-300 bg-[#FFF9F2] dark:bg-[#0F1A14] border-t border-[#F1E6D8] dark:border-[#243832] ${
           menuOpen ? 'max-h-72 opacity-100' : 'max-h-0 opacity-0'
         }`}
         aria-hidden={!menuOpen}

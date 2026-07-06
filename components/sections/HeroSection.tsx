@@ -39,7 +39,7 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#FFF9F2]">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#FFF9F2] dark:bg-[#0F1A14]">
       {/* Decoraciones nicaragüenses */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
         {/* Madroño — árbol nacional, esquina superior izquierda */}
@@ -50,8 +50,8 @@ export default function HeroSection() {
         <GuardaBarrancoSVG className="absolute top-28 right-1/4 w-32 opacity-15 -rotate-6" />
         {/* Sacuanjoche secundaria pequeña */}
         <SacuanjocheSVG className="absolute top-1/2 left-12 w-16 opacity-20 rotate-45" />
-        {/* Fondo suave crema */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FFF9F2] to-transparent" />
+        {/* Fondo suave crema → en dark queda oscuro a transparente */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FFF9F2] to-transparent dark:from-[#0F1A14] dark:to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-24 pb-16 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -163,9 +163,9 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#667085]" aria-hidden="true">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#667085] dark:text-[#A7B2AD]" aria-hidden="true">
         <span className="text-xs tracking-widest uppercase">Scroll</span>
-        <div className="w-5 h-8 rounded-full border-2 border-[#667085]/40 flex justify-center pt-1.5">
+        <div className="w-5 h-8 rounded-full border-2 border-[#667085]/40 dark:border-[#A7B2AD]/40 flex justify-center pt-1.5">
           <div className="w-1 h-2 rounded-full bg-[#2F9E72]" style={{ animation: 'bounce-dot 1.5s ease-in-out infinite' }} />
         </div>
       </div>
